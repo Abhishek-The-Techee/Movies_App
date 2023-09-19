@@ -46,7 +46,7 @@ class LoginForm extends Component {
     const {password} = this.state
 
     return (
-      <>
+      <div className="input-fields-container">
         <label className="label-text" htmlFor="user-name">
           PASSWORD
         </label>
@@ -59,7 +59,7 @@ class LoginForm extends Component {
           placeholder="Password"
           onChange={this.onChangePassword}
         />
-      </>
+      </div>
     )
   }
 
@@ -74,8 +74,8 @@ class LoginForm extends Component {
     this.setState({showSubmitError: true, errorMsg})
   }
 
-  onSubmitForm = async () => {
-    this.preventDefault()
+  onSubmitForm = async event => {
+    event.preventDefault()
     const {userName, password} = this.state
     const userDetails = {userName, password}
     const loginApiUrl = 'https://apis.ccbp.in/login'
@@ -84,7 +84,7 @@ class LoginForm extends Component {
       body: JSON.stringify(userDetails),
     }
     const response = await fetch(loginApiUrl, options)
-    const data = response.json()
+    const data = await response.json()
     if (response.ok) {
       this.onSubmitSuccess(data.jwt_token)
     } else {

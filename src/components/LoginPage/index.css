@@ -71,13 +71,16 @@
   border: none;
   outline: none;
   padding: 5px;
-  margin-bottom: 20px;
   border-radius: 4px;
   margin-top: 4px;
   @media screen and (min-width: 768px) {
     width: 300px;
     height: 30px;
   }
+}
+
+.input-fields-container {
+  margin-top: 20px;
 }
 
 .label-text {
@@ -104,4 +107,6 @@
 .error-msg {
   font-family: 'Roboto';
   color: #fa0710;
+  margin-top: 2px;
+  margin-bottom: 0px;
 }
