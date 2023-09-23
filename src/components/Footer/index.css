@@ -1,0 +1,25 @@
+.footer-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+  background-color: #000000;
+}
+.social-media-icons-list {
+  list-style-type: none;
+  display: flex;
+}
+.social-media-icon {
+  color: #ffffff;
+  font-size: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-bottom: 2px;
+}
+.contact-us-text {
+  color: #ffffff;
+  font-family: 'Roboto';
+  margin-top: 0px;
+  padding-left: 30px;
+}
