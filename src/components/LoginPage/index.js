@@ -25,14 +25,14 @@ class LoginForm extends Component {
 
     return (
       <>
-        <label className="label-text" htmlFor="user-name">
+        <label className="label-text" htmlFor="username">
           USERNAME
         </label>
         <br />
         <input
           className="user-input"
           type="text"
-          id="user-name"
+          id="username"
           value={userName}
           placeholder="Username"
           onChange={this.onChangeUserName}
@@ -47,7 +47,7 @@ class LoginForm extends Component {
 
     return (
       <div className="input-fields-container">
-        <label className="label-text" htmlFor="user-name">
+        <label className="label-text" htmlFor="password">
           PASSWORD
         </label>
         <br />
@@ -64,10 +64,13 @@ class LoginForm extends Component {
   }
 
   onSubmitSuccess = jwtToken => {
+    const {userName, password} = this.state
     const {history} = this.props
 
     Cookies.set('jwt_token', jwtToken, {expires: 30})
     history.replace('/')
+    localStorage.setItem('userName', userName)
+    localStorage.setItem('password', password)
   }
 
   onSubmitFailure = errorMsg => {
