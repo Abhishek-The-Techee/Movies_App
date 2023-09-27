@@ -80,7 +80,7 @@ class LoginForm extends Component {
   onSubmitForm = async event => {
     event.preventDefault()
     const {userName, password} = this.state
-    const userDetails = {userName, password}
+    const userDetails = {username: userName, password}
     const loginApiUrl = 'https://apis.ccbp.in/login'
     const options = {
       method: 'POST',
@@ -98,7 +98,7 @@ class LoginForm extends Component {
   render() {
     const {showSubmitError, errorMsg} = this.state
 
-    const jwtToken = Cookies.get('jwt-token')
+    const jwtToken = Cookies.get('jwt_token')
     if (jwtToken !== undefined) {
       return <Redirect to="/" />
     }
