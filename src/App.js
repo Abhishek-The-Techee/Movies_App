@@ -6,6 +6,8 @@ import Header from './components/Header'
 import NotFound from './components/NotFound'
 import Footer from './components/Footer'
 import Account from './components/Account'
+import Popular from './components/Popular'
+import FailureView from './components/FailureView'
 
 import './App.css'
 
@@ -16,6 +18,8 @@ const App = () => (
     <Route exact path="/header" component={Header} />
     <Route exact path="/footer" component={Footer} />
     <Route exact path="/account" component={Account} />
+    <Route exact path="/popular" component={Popular} />
+    <Route exact path="/failure-view" component={FailureView} />
     <Route component={NotFound} />
   </Switch>
 )

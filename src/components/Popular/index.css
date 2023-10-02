@@ -1,0 +1,26 @@
+.popular-bg-container {
+  background-color: #000000;
+}
+.popular-result-bg-container {
+  height: 100%;
+  padding: 30px;
+}
+.popular-movies-list {
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+}
+.popular-item {
+  padding: 5px;
+}
+.popular-image {
+  height: 100px;
+  width: 80px;
+  border-radius: 8px;
+}
+.results-container {
+  height: 50%;
+}
