@@ -37,8 +37,8 @@ class Popular extends Component {
       method: 'GET',
     }
     const response = await fetch(apiUrl, options)
-    const data = await response.json()
-    if (response.ok) {
+    if (response.ok === true) {
+      const data = await response.json()
       const updatedData = data.results.map(each => ({
         id: each.id,
         title: each.title,
@@ -59,6 +59,7 @@ class Popular extends Component {
 
   renderSuccessView = () => {
     const {popularMovies} = this.state
+    console.log(popularMovies)
 
     return (
       <div className="popular-result-bg-container">
@@ -85,11 +86,32 @@ class Popular extends Component {
 
   renderFailureView = () => <FailureView onRetry={this.onRetry} />
 
+  renderLoadingView = () => (
+    <div className="loader-container">
+      <Loader type="TailSpin" size={35} color="#D81F26" testid="loader" />
+    </div>
+  )
+
+  renderMovies = () => {
+    const {apiStatus} = this.state
+
+    switch (apiStatus) {
+      case apiStatusConstants.success:
+        return this.renderSuccessView()
+      case apiStatusConstants.failure:
+        return this.renderFailureView()
+      case apiStatusConstants.inProgress:
+        return this.renderLoadingView()
+      default:
+        return null
+    }
+  }
+
   render() {
     return (
       <div className="popular-bg-container">
-        <Header />|
-        <div className="result-container">{this.renderFailureView()}</div>
+        <Header />
+        <div className="result-container">{this.renderMovies()}</div>
         <Footer />
       </div>
     )

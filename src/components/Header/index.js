@@ -78,7 +78,7 @@ class Header extends Component {
               <Link to="/" className="nav-link">
                 <li className={`nav-item-text ${homeClassName}`}>Home</li>
               </Link>
-              <Link to="/" className="nav-link">
+              <Link to="/popular" className="nav-link">
                 <li className={`nav-item-text ${popularClassName}`}>Popular</li>
               </Link>
             </ul>
