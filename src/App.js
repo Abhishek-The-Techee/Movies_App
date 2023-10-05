@@ -8,6 +8,7 @@ import Footer from './components/Footer'
 import Account from './components/Account'
 import Popular from './components/Popular'
 import FailureView from './components/FailureView'
+import Search from './components/Search'
 
 import './App.css'
 
@@ -20,6 +21,7 @@ const App = () => (
     <Route exact path="/account" component={Account} />
     <Route exact path="/popular" component={Popular} />
     <Route exact path="/failure-view" component={FailureView} />
+    <Route exact path="/search" component={Search} />
     <Route component={NotFound} />
   </Switch>
 )
