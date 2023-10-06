@@ -1,0 +1,45 @@
+.originals-img {
+  height: 170px;
+  width: 255px;
+  border: none;
+  border-radius: 8px;
+  margin: 0px 10px;
+  padding-left: 30px;
+  padding-right: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.slick-prev:before,
+.slick-next: before {
+  color: white;
+}
+
+.loader-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 170px;
+  background-color: #000000;
+}
+.failure-view-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #0d0d0d;
+  height: 170px;
+}
+.failure-text {
+  font-family: 'Roboto';
+  color: #ffffff;
+}
+
+.originals-retry-btn {
+  height: 30px;
+  width: 100px;
+  border-radius: 5px;
+  color: #000000;
+  background-color: #ffffff;
+  border: none;
+  outline: none;  
+}
