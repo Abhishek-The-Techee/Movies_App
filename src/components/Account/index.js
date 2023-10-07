@@ -5,6 +5,11 @@ import Footer from '../Footer'
 import './index.css'
 
 const Account = props => {
+  const username = localStorage.getItem('username')
+  const password = localStorage.getItem('password')
+
+  const astericPassword = '*'.repeat(password.length)
+
   const onClickLogout = () => {
     const {history} = props
     Cookies.remove('jwt_token')
@@ -20,8 +25,8 @@ const Account = props => {
         <div className="member-details-container">
           <p className="membership-heading">Member ship</p>
           <div>
-            <p className="member-mail">Abhishek@gmail.com</p>
-            <p className="member-password">Password: *********</p>
+            <p className="member-mail">{username}</p>
+            <p className="member-password">Password: {astericPassword}</p>
           </div>
         </div>
         <hr className="hr-line" />

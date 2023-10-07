@@ -2,7 +2,6 @@
   background-color: #000000;
 }
 .popular-result-bg-container {
-  height: 60vh;
   padding: 30px;
 }
 .popular-movies-list {
@@ -17,9 +16,10 @@
   padding: 5px;
 }
 .popular-image {
-  height: 100px;
-  width: 80px;
+  height: 220px;
+  width: 200px;
   border-radius: 8px;
+  margin: 10px;
 }
 .results-container {
   height: 50%;

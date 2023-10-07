@@ -18,7 +18,7 @@ const apiStatusConstants = {
 
 class Home extends Component {
   state = {
-    initialPoster: {},
+    topPoster: {},
     apiStatus: apiStatusConstants.initial,
   }
 
@@ -43,7 +43,6 @@ class Home extends Component {
     const response = await fetch(apiUrl, options)
     if (response.ok === true) {
       const data = await response.json()
-      // console.log(data)
       const fetchedDataLength = data.results.length
       const randomPoster =
         data.results[Math.floor(Math.random() * fetchedDataLength)]
@@ -54,9 +53,8 @@ class Home extends Component {
         overview: randomPoster.overview,
         posterPath: randomPoster.poster_path,
       }
-      // console.log(updatedData)
       this.setState({
-        initialPoster: {...updatedData},
+        topPoster: {...updatedData},
         apiStatus: apiStatusConstants.success,
       })
     } else {
@@ -97,8 +95,8 @@ class Home extends Component {
   )
 
   renderSuccessView = () => {
-    const {initialPoster} = this.state
-    const {backdropPath, title, overview} = initialPoster
+    const {topPoster} = this.state
+    const {backdropPath, title, overview} = topPoster
     return (
       <>
         <div
@@ -114,7 +112,7 @@ class Home extends Component {
             flexDirection: 'column',
           }}
         >
-          <Header className="header-opacity" />
+          <Header />
           <div className=" home-header-content heading-container">
             <h1 className=" movie-details-name home-poster-title" key={title}>
               {title}

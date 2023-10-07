@@ -31,7 +31,7 @@ class Popular extends Component {
     const jwtToken = Cookies.get('jwt_token')
     const apiUrl = 'https://apis.ccbp.in/movies-app/popular-movies'
     const options = {
-      header: {
+      headers: {
         Authorization: `Bearer ${jwtToken}`,
       },
       method: 'GET',
@@ -88,7 +88,13 @@ class Popular extends Component {
 
   renderLoadingView = () => (
     <div className="loader-container">
-      <Loader type="TailSpin" size={35} color="#D81F26" testid="loader" />
+      <Loader
+        type="TailSpin"
+        height={80}
+        width={80}
+        color="#D81F26"
+        testid="loader"
+      />
     </div>
   )
 

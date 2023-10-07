@@ -1,41 +1,10 @@
 import {Component} from 'react'
-import Slider from 'react-slick'
 import Loader from 'react-loader-spinner'
 import Cookies from 'js-cookie'
-import {Link} from 'react-router-dom'
+
+import SlickMovieCard from '../SlickMovieCard'
 
 import './index.css'
-
-const settings = {
-  dots: false,
-  infinite: true,
-  speed: 500,
-  slidesToShow: 4,
-  slidesToScroll: 1,
-  responsive: [
-    {
-      breakpoint: 1024,
-      settings: {
-        slidesToShow: 4,
-        slidesToScroll: 1,
-      },
-    },
-    {
-      breakpoint: 600,
-      settings: {
-        slidesToShow: 3,
-        slidesToScroll: 1,
-      },
-    },
-    {
-      breakpoint: 480,
-      settings: {
-        slidesToShow: 2,
-        slidesToScroll: 1,
-      },
-    },
-  ],
-}
 
 const apiStatusConstants = {
   initial: 'INITIAL',
@@ -59,7 +28,7 @@ class Originals extends Component {
     const jwtToken = Cookies.get('jwt_token')
     const apiUrl = 'https://apis.ccbp.in/movies-app/originals'
     const options = {
-      header: {
+      headers: {
         Authorization: `Bearer ${jwtToken}`,
       },
       method: 'GET',
@@ -67,7 +36,7 @@ class Originals extends Component {
     const response = await fetch(apiUrl, options)
     if (response.ok === true) {
       const data = await response.json()
-      const updatedData = data.result.map(each => ({
+      const updatedData = data.results.map(each => ({
         title: each.title,
         backdropPath: each.backdrop_path,
         id: each.id,
@@ -88,21 +57,7 @@ class Originals extends Component {
   renderOriginalsView = () => {
     const {originalsData} = this.state
 
-    return (
-      <Slider {...settings}>
-        {originalsData.map(each => (
-          <Link to={`/movies/${each.id}`} key={each.id}>
-            <div className="slick-item" key={each.id}>
-              <img
-                src={each.backdropPath}
-                alt="movie poster"
-                className="originals-img"
-              />
-            </div>
-          </Link>
-        ))}
-      </Slider>
-    )
+    return <SlickMovieCard movies={originalsData} />
   }
 
   renderLoadingView = () => (

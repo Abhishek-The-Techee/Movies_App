@@ -69,7 +69,7 @@ class LoginForm extends Component {
 
     Cookies.set('jwt_token', jwtToken, {expires: 30})
     history.replace('/')
-    localStorage.setItem('userName', userName)
+    localStorage.setItem('username', userName)
     localStorage.setItem('password', password)
   }
 

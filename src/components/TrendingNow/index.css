@@ -45,4 +45,6 @@
   border: none;
   outline: none;
 }
-
+.react-slick-li-item {
+  list-style-type: none;
+}
