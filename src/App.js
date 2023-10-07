@@ -9,7 +9,7 @@ import Account from './components/Account'
 import Popular from './components/Popular'
 import FailureView from './components/FailureView'
 import Search from './components/Search'
-
+import TrendingNow from './components/TrendingNow'
 import './App.css'
 
 const App = () => (
@@ -22,6 +22,7 @@ const App = () => (
     <Route exact path="/popular" component={Popular} />
     <Route exact path="/failure-view" component={FailureView} />
     <Route exact path="/search" component={Search} />
+    <Route exact path="/trending" component={TrendingNow} />
     <Route component={NotFound} />
   </Switch>
 )

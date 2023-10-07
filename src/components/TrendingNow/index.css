@@ -1,4 +1,4 @@
-.originals-img {
+.trending-now-img {
   height: 170px;
   width: 255px;
   border: none;
@@ -20,6 +20,7 @@
   justify-content: center;
   align-items: center;
   height: 170px;
+  width: 1109px;
   background-color: #000000;
 }
 .failure-view-container {
@@ -28,13 +29,14 @@
   align-items: center;
   background-color: #0d0d0d;
   height: 170px;
+  width: 1109px;
 }
 .failure-text {
   font-family: 'Roboto';
   color: #ffffff;
 }
 
-.originals-retry-btn {
+.trending-now-retry-btn {
   height: 30px;
   width: 100px;
   border-radius: 5px;
@@ -43,3 +45,4 @@
   border: none;
   outline: none;
 }
+

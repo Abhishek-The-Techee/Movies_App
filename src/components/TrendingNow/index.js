@@ -59,7 +59,7 @@ class TrendingNow extends Component {
     const jwtToken = Cookies.get('jwt_token')
     const apiUrl = 'https://apis.ccbp.in/movies-app/trending-movies'
     const options = {
-      header: {
+      headers: {
         Authorization: `Bearer ${jwtToken}`,
       },
       method: 'GET',
@@ -67,7 +67,7 @@ class TrendingNow extends Component {
     const response = await fetch(apiUrl, options)
     if (response.ok === true) {
       const data = await response.json()
-      const updatedData = data.result.map(each => ({
+      const updatedData = data.results.map(each => ({
         title: each.title,
         backdropPath: each.backdrop_path,
         id: each.id,
@@ -96,7 +96,7 @@ class TrendingNow extends Component {
               <img
                 src={each.backdropPath}
                 alt="movie poster"
-                className="originals-img"
+                className="trending-now-img"
               />
             </div>
           </Link>
@@ -125,7 +125,7 @@ class TrendingNow extends Component {
       <p className="failure-text">Something went wrong. Please try again</p>
       <button
         type="button"
-        className="originals-retry-btn"
+        className="trending-now-retry-btn"
         onClick={this.tryAgain}
       >
         Try Again
