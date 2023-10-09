@@ -56,7 +56,7 @@ class TrendingNow extends Component {
 
   renderTrendingNowMovies = () => {
     const {trendingNowData} = this.state
-    return <SlickMovieCard movies={trendingNowData} />
+    return <SlickMovieCard moviesData={trendingNowData} />
   }
 
   renderLoadingView = () => (

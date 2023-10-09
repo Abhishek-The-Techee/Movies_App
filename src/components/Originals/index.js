@@ -57,7 +57,7 @@ class Originals extends Component {
   renderOriginalsView = () => {
     const {originalsData} = this.state
 
-    return <SlickMovieCard movies={originalsData} />
+    return <SlickMovieCard moviesData={originalsData} />
   }
 
   renderLoadingView = () => (

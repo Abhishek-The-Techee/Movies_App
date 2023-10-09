@@ -41,11 +41,11 @@ const settings = {
 
 class SlickMovieCard extends Component {
   renderSlider = () => {
-    const {movies} = this.props
+    const {moviesData} = this.props
     return (
       <>
         <Slider {...settings}>
-          {movies.map(each => (
+          {moviesData.map(each => (
             <Link to={`/movies/${each.id}`} key={each.id}>
               <li
                 testid="MovieCard"
