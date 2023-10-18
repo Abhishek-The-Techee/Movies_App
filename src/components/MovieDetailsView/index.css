@@ -1,0 +1,121 @@
+.container-view {
+  height: 100vh;
+  background-color: #000000;
+}
+.loader-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.success-view-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background-color: #000000;
+}
+.movie-details-container {
+  height: 50vh;
+}
+.movie-title {
+  color: #ffffff;
+}
+.movie-details-content-view {
+  display: flex;
+  flex-direction: column;
+  margin-left: 90px;
+  margin-top: 120px;
+  padding-right: 500px;
+}
+.movie-heading {
+  color: #ffffff;
+  font-family: 'Roboto';
+  font-size: 48px;
+  font-weight: 400;
+  margin-bottom: 3px;
+}
+.time-date-container {
+  display: flex;
+  flex-direction: row;
+}
+.time-text {
+  margin-top: 3px;
+  margin-bottom: 5px;
+  color: #ffffff;
+  font-weight: 480;
+  font-family: 'Roboto';
+  font-size: 18px;
+}
+.adult-text {
+  color: #ffffff;
+  margin-top: 3px;
+  margin-bottom: 5px;
+  margin-left: 15px;
+  margin-right: 15px;
+  border: 1px solid #ffffff;
+  width: 40px;
+  height: 24px;
+  text-align: center;
+  font-family: 'Roboto';
+  font-size: 18px;
+}
+.overview-text {
+  color: #ffffff;
+  font-family: 'Roboto';
+}
+.movie-info-container {
+  display: flex;
+}
+.movie-info-items {
+  padding-left: 90px;
+}
+.info-heading {
+  color: #94a3b8;
+  font-size: 18px;
+  font-family: 'Roboto';
+}
+.success-view-main-container {
+  background-color: #000000;
+}
+.play-btn {
+  margin-top: 40px;
+}
+@media screen and (max-width: 768px) {
+  .success-view-container {
+    height: 427px;
+  }
+  .movie-heading {
+    color: #ffffff;
+    font-family: 'Roboto';
+    font-size: 36px;
+    font-weight: 400;
+    margin-bottom: 3px;
+  }
+  .time-text {
+    margin-top: 3px;
+    margin-bottom: 5px;
+    color: #ffffff;
+    font-weight: 480;
+    font-family: 'Roboto';
+    font-size: 16px;
+  }
+  .adult-text {
+    color: #ffffff;
+    margin-top: 3px;
+    margin-bottom: 5px;
+    margin-left: 20px;
+    margin-right: 15px;
+    border: 1px solid #ffffff;
+    width: 51px;
+    height: 24px;
+    text-align: center;
+    font-family: 'Roboto';
+    font-size: 16px;
+  }
+  .movie-details-content-view {
+    display: flex;
+    flex-direction: column;
+    margin-left: 90px;
+    margin-top: 120px;
+    padding-right: 50px;
+  }
+}

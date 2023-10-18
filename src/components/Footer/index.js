@@ -18,7 +18,7 @@ const Footer = () => (
         <FaYoutube className="social-media-icon" />
       </li>
     </ul>
-    <p className="contact-us-text">Contact us</p>
+    <p className="contact-us-text">Contact Us</p>
   </div>
 )
 export default Footer

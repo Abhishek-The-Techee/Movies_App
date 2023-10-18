@@ -54,7 +54,7 @@ class SlickMovieCard extends Component {
               >
                 <img
                   className="slick-movie-img"
-                  src={each.posterPath}
+                  src={each.backdropPath}
                   alt={each.title}
                 />
               </li>

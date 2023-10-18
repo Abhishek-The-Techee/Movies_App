@@ -25,3 +25,9 @@
   outline: none;
   font-weight: 500;
 }
+@media screen and (max-width: 768px) {
+  .failure-image {
+    height: 172px;
+    width: 232px;
+  }
+}

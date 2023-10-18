@@ -1,3 +1,6 @@
+.originals-main-container {
+  margin-bottom: 20px;
+}
 .originals-img {
   height: 170px;
   width: 255px;
@@ -41,5 +44,5 @@
   color: #000000;
   background-color: #ffffff;
   border: none;
-  outline: none;  
+  outline: none;
 }
