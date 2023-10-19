@@ -41,11 +41,11 @@ class MovieDetailsView extends Component {
     const response = await fetch(apiUrl, options)
     if (response.ok === true) {
       const data = await response.json()
-      console.log(data)
       const updatedGenresList = data.movie_details.genres.map(each => ({
         id: each.id,
         name: each.name,
       }))
+      console.log(updatedGenresList)
       const updatedSimilarMoviesList = data.movie_details.similar_movies.map(
         each => ({
           backdropPath: each.backdrop_path,
@@ -117,7 +117,6 @@ class MovieDetailsView extends Component {
 
   renderSuccessView = () => {
     const {movieDetailsList} = this.state
-    console.log(movieDetailsList)
 
     const {
       adult,
@@ -134,6 +133,7 @@ class MovieDetailsView extends Component {
       voteCount,
       posterPath,
     } = movieDetailsList
+    console.log({genres})
 
     const inHours = Math.floor(runtime / 60)
     const inMinutes = runtime % 60
@@ -170,7 +170,6 @@ class MovieDetailsView extends Component {
             </button>
           </div>
         </div>
-        {/*
         <div className="movie-info-container">
           <div className="movie-info-items">
             <h1 className="info-heading">Genres</h1>
@@ -183,7 +182,6 @@ class MovieDetailsView extends Component {
             </ul>
           </div>
         </div>
-        */}
       </div>
     )
   }
