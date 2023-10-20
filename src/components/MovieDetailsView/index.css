@@ -65,13 +65,11 @@
 .movie-info-container {
   display: flex;
 }
-.movie-info-items {
-  padding-left: 90px;
-}
 .info-heading {
   color: #94a3b8;
   font-size: 18px;
   font-family: 'Roboto';
+  padding-left: 90px;
 }
 .success-view-main-container {
   background-color: #000000;
@@ -117,5 +115,41 @@
     margin-left: 90px;
     margin-top: 120px;
     padding-right: 50px;
+    padding-bottom: 20px;
   }
+  .movie-info-container {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+.list-text {
+  color: #ffffff;
+  font-family: 'Roboto';
+  font-size: 16px;
+}
+.info-list {
+  list-style-type: none;
+  margin-left: 0px;
+}
+.list-item {
+  list-style-type: none;
+  margin-left: 50px;
+  margin-right: 40px;
+}
+.count-text {
+  font-family: 'Roboto';
+  color: #ffffff;
+  font-size: 16px;
+  padding-left: 92px;
+}
+.more-like-this-heading {
+  color: #ffffff;
+  font-family: 'Roboto';
+  font-size: 24px;
+  font-weight: 400;
+  padding-left: 90px;
+}
+.similar-movies-list {
+  margin-left: 90px;
+  margin-right: 70px;
 }

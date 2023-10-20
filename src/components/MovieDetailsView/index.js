@@ -5,6 +5,7 @@ import Cookies from 'js-cookie'
 import Header from '../Header'
 import Footer from '../Footer'
 import FailureView from '../FailureView'
+import SimilarMovieCard from '../SimilarMovieCard'
 
 import './index.css'
 
@@ -131,7 +132,6 @@ class MovieDetailsView extends Component {
       title,
       voteAverage,
       voteCount,
-      posterPath,
     } = movieDetailsList
     console.log({genres})
 
@@ -176,18 +176,64 @@ class MovieDetailsView extends Component {
             <ul className="info-list">
               {genres.map(each => (
                 <li className="list-item" key={each.id}>
-                  <p>{each.name}</p>
+                  <p className="list-text">{each.name}</p>
                 </li>
               ))}
             </ul>
           </div>
+          <div className="movie-info-items">
+            <h1 className="info-heading">Audio Available</h1>
+            <ul className="info-list">
+              {spokenLanguages.map(each => (
+                <li className="list-item" key={each.id}>
+                  <p className="list-text">{each.englishName}</p>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div className="movie-info-items">
+            <h1 className="info-heading">Rating Count</h1>
+            <p className="count-text">{voteCount}</p>
+            <h1 className="info-heading">Rating Average</h1>
+            <p className="count-text">{voteAverage}</p>
+          </div>
+          <div className="movie-info-items">
+            <h1 className="info-heading">Budget</h1>
+            <p className="count-text">{budget}</p>
+            <h1 className="info-heading">Release Date</h1>
+            <p className="count-text">{releaseDate}</p>
+          </div>
         </div>
+        <div className="similar-movies-container">
+          <h1 className="more-like-this-heading">More like this</h1>
+          <div className="similar-movies-list">
+            {similarMovies.map(each => (
+              <SimilarMovieCard cardDetails={each} />
+            ))}
+          </div>
+        </div>
+        <Footer />
       </div>
     )
   }
 
+  renderMovieDetailsView = () => {
+    const {apiStatus} = this.state
+
+    switch (apiStatus) {
+      case apiStatusConstants.success:
+        return this.renderSuccessView()
+      case apiStatusConstants.failure:
+        return this.renderFailureView()
+      case apiStatusConstants.inProgress:
+        return this.renderLoadingView()
+      default:
+        return null
+    }
+  }
+
   render() {
-    return <div>{this.renderSuccessView()}</div>
+    return <div>{this.renderMovieDetailsView()}</div>
   }
 }
 export default MovieDetailsView
