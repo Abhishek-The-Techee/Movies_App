@@ -65,7 +65,7 @@ class Popular extends Component {
       <div className="popular-result-bg-container">
         <ul className="popular-movies-list">
           {popularMovies.map(each => (
-            <Link to={`/movie/${each.id}`} key={each.id} target="blank">
+            <Link to={`/movies/${each.id}`} key={each.id} target="blank">
               <li className="popular-item" key={each.id}>
                 <img
                   src={each.posterPath}
