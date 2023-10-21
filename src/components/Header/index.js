@@ -88,7 +88,7 @@ class Header extends Component {
               <input
                 type="search"
                 className="search-box"
-                placeholder="Search"
+                placeholder="search"
                 onKeyDown={this.onChangeSearchInput}
               />
             )}
